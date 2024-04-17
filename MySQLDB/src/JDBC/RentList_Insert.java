@@ -34,6 +34,19 @@ public class RentList_Insert {
 			}else
 				break;
 			} System.out.println("입력된 도서 번호 : " + booknum + "\n");
+			System.out.print("할인금액을 입력하세요");
+	         int discount = Integer.parseInt(sc.nextLine());
+	         
+	         RentDto rdto = new RentDto();
+	         rdto.setMnum(Integer.parseInt(membernum));
+	         rdto.setBnum(Integer.parseInt(booknum));
+	         rdto.setDiscount(discount);
+	         
+	         int res = rdto.InsertRent(rdto);
+	         if(res ==1) System.out.println("추가성공");
+	         else System.out.println("추가실패");
+			
+			
 			
 			
 		}
