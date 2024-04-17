@@ -55,8 +55,8 @@ public class RentDao {
 	public int memberOk(String membernum) {
 		int result = 0;
 		con =Dbman.getConnection();
-		// String sql = "select count(*)as cnt from memberlist where mebernum = ?" ;
-		String sql = "select* from memberlist where mebernum = ?" ;
+		// String sql = "select count(*)as cnt from memberlist where membernum = ?" ;
+		String sql = "select* from memberlist where membernum = ?" ;
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, Integer.parseInt(membernum));
