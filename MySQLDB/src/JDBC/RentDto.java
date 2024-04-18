@@ -66,10 +66,6 @@ public class RentDto {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public int InsertRent(RentDto rdto) {
-		
-		return 0;
-	}
 	
 	
 	

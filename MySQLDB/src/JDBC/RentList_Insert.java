@@ -42,7 +42,7 @@ public class RentList_Insert {
 	         rdto.setBnum(Integer.parseInt(booknum));
 	         rdto.setDiscount(discount);
 	         
-	         int res = rdto.InsertRent(rdto);
+	         int res = rdao.InsertRent(rdto);
 	         if(res ==1) System.out.println("추가성공");
 	         else System.out.println("추가실패");
 			
