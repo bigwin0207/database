@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- 
+        코딩으로 테이블의 셀을 합치는 방법
+        1. 합치고자하는 셀들을 확인합니다.
+        2. 확인된 셀들 중 가장 위에 가장 왼쪽에 있는 셀만 남기고 나머지 td 태그를 지운다.
+        3. 지우기 전에 확인할 사항(행으로 몇개가 합쳐질지, 열로 몇개가 합쳐질지 확인)
+        4. 왼쪽 가장 위에 지우지 않은 셀에 합쳐진 열의 갯수를 colspan 이라는 속성으로 입력한다.
+        5. 합쳐진 행의 갯수를 rowspan 이라는 속성으로 입력합니다.
+        6. colspan 과 rowspan은 자신을 포함해서 지워진 셀들의 역할을 하겠다는 뜻
+     -->
+    <table border="0" width="500" align="center" cellspacing="1" cellpadding="10" bgcolor="black">
+        <tr bgcolor="white" height="50" align="center">
+            <td colspan="2">1행 1열</td>
+            
+            <td colspan="3">1행 3열</td>
+           
+            
+        </tr>
+        <tr bgcolor="white" height="50" align="center">
+            <td rowspan="2">2행 1열</td>
+            <td rowspan="3">2행 2열</td>
+            <td>2행 3열</td>
+            <td>2행 4열</td>
+            <td>2행 5열</td>
+        </tr>
+        <tr bgcolor="white" height="50" align="center">
+            
+            
+            <td rowspan="3" colspan="3">3행 3열</td>
+            
+            
+        </tr>
+        <tr bgcolor="white" height="50" align="center">
+            <td>4행 1열</td>
+            
+            
+        </tr>
+        <tr bgcolor="white" height="50" align="center">
+            <td>5행 1열</td>
+            <td>5행 2열</td>
+            
+        </tr>
+    </table>
+    
+</body>
+</html>
