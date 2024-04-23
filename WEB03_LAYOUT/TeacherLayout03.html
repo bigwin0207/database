@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeacherLayout03.html</title>
+    <style type="text/css">
+        .base3{
+            position:relative;
+            width: 100%;
+            height: 500px;
+            border: 1px solid black;
+        }
+        .view{
+            position: relative;
+            width: 1100px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 0 auto;
+
+        }
+        .view div:first-child{
+            position: absolute;
+            background: red;
+            height: 400px;
+            width: 70%;
+            top: 0; left: 0;
+        }
+        .view div:nth-child(2){
+            position: absolute;
+            width: 700px;
+            height: 400px;
+            overflow: hidden;
+            right:0; bottom:0;
+            z-index:2;
+        }
+        .view div:nth-child(2)img{
+            width: 700px;
+            
+        }
+        .view div:last-child{
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            background: white;
+            left: 50px;
+            bottom: 50px;
+            
+        }
+        .view div:last-child .title{
+            position:relative;
+            width: 350px;
+            height: 100px;
+            margin: 0 auto;
+            border: 1px dashed blue;
+            font-size: 190%;
+            line-height: 110px;
+            
+            font-weight: bold;
+            z-index: 4;
+        }
+        .view div:last-child .text{
+            position:relative;
+            width: 350px;
+            height: 190px;
+            margin: 0 auto;
+            border: 1px dashed blue;
+            line-height: 110px;
+            z-index: 4;
+            background: white;
+
+        }
+        .title{
+            position: relative;
+            width: 250px;
+            height: 100px;
+            margin: 0 auto;
+            border: 1px solid red;
+            font-size: 2em;
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <div class="base3">
+        <div clasee="view">
+            <div></div>
+            <div><img src="images/Penguins.jpg" /></div>
+            <div>
+                <div class="title">segmenttitle</div>
+                <div class="text"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
