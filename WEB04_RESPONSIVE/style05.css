@@ -1,0 +1,21 @@
+body{margin: 0;}
+.container{
+    width: 100vw;
+    height: 300px;
+    border: 10px solid black;
+    display: flex;
+    margin-left: 5px;
+    box-sizing: border-box;
+}
+.box{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+}
+#container1{
+    flex-wrap: wrap;
+}
+#container2{
+    flex-wrap: nowrap;
+}

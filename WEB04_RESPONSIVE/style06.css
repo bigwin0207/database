@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    display: flex;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    border: 10px solid black;
+    display: flex;
+    margin-left: 5px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+.box{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+}
+#container1{
+    flex-wrap: wrap;
+}
+
+#container2{
+    flex-flow: column wrap;
+    /* flex-direction 과 flex-wrap 을 한번에 지정 */
+}

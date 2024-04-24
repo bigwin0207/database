@@ -1,0 +1,43 @@
+body{margin: 0;}
+#container1{
+    width: 100vw;
+    height: 100px;
+    border: 1px solid red;
+    display: flex;
+    box-sizing: border-box;
+}
+#container1 .box{
+    border:1px solid black;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+    /* flex:1; */
+    /* 1:1:1 비율로 만들어줌 */
+}
+#container1 .box:nth-child(1){flex:1;}
+#container1 .box:nth-child(2){flex:2;}
+#container1 .box:nth-child(3){flex:3;}
+
+#container2{
+    width: 300px;
+    height: 500px;
+    border: 1px solid red;
+     display: flex;
+    flex-direction: column; 
+    box-sizing: border-box;
+}
+#container2 .box{
+    border:1px solid black;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+
+
+#container2 .box:nth-child(1){flex:1;}
+#container2 .box:nth-child(2){flex:2;}
+#container2 .box:nth-child(3){flex:3;}
