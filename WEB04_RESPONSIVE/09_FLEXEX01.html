@@ -12,15 +12,20 @@
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
-        align-content: space-around;    
+        justify-content: center;
+        align-items: center;
+        
     }
     .view{
+         width: 1000px;
+        height: 200px;
+        display: flex;
+        box-sizing: border-box;
+        border: 1px solid red;  
+        justify-content: space-between;
         
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+       
+    
     }
     .title{
         width: 300px;
@@ -45,16 +50,13 @@
         
     }
     .img1{
-        width: 1200px;
+        width: 1000px;
         height: 200px;
         display: flex;
         box-sizing: border-box;
         border: 1px solid red;  
-        justify-content:space-around ;
-        align-content: space-between;
-        
-
-    }   
+        justify-content: space-between;
+    }
     .img{
         display: flex;
         overflow: hidden;
@@ -64,18 +66,52 @@
         box-sizing: border-box;
         
     }
+    .rect{ width:200px; 
+        height:200px; 
+         border:1px solid blue;
+          display: flex;
+           flex-direction: column;
+           
+        }
+
+    .title1{
+        width: 200px;
+        height: 200px;
+        display: flex;
+        box-sizing: border-box;
+        border: 1px solid red;  
+        background-color: blue;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        font-size: 150%; 
+        font-weight: bold;
+        
+        
+       
+
+    }
+    .text2{
+        width: 200px;
+        height: 200px;
+        display: flex;
+        box-sizing: border-box;
+        border: 1px solid red;  
+        
+        }   
+        
 
     </style>
 </head>
 <body>
     <div class="base">
-        <div class="view">
-            <div class="title">
+
+          <div class="title">
             Content Title01
             </div>
             <div class="text">
             가나다라마바사
-        </div>
+        
     </div>
     </div>
     <div class="base">
@@ -86,6 +122,46 @@
                 <div class="img"><img src="images/Koala.jpg" /></div>
                 <div class="img"><img src="images/Koala.jpg" /></div>
             </div>
+        </div>
+    </div>
+    <div class="base">
+        <div class="view">
+            <div class="rect">
+                <div class="title1">
+                    Content Title01
+                </div>
+                    <div class="text2">
+                    가나다라마바사
+                </div>
+            </div>    
+
+            <div class="rect">
+                <div class="title1">
+                    Content Title01
+                </div>
+                    <div class="text2">
+                    가나다라마바사
+                </div>
+            </div>    
+
+            <div class="rect">
+                <div class="title1">
+                    Content Title01
+                </div>
+                    <div class="text2">
+                    가나다라마바사
+                </div>
+            </div>    
+
+            <div class="rect">
+                <div class="title1">
+                    Content Title01
+                </div>
+                    <div class="text2">
+                    가나다라마바사
+                </div>
+            </div>    
+                   
         </div>
     </div>
 </body>

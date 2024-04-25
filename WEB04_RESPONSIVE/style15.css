@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.child{
+    background-color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 200px;
+    flex: 1;
+    margin: 5px;
+    font-size: 3em;
+}
+
+/* 
+    최소사이즈 : 576px 이하
+    모바일 : 576~768
+    태블릿 사이즈: 768 ~ 1024
+    데스크탑 : 1024~
+*/
+/* 최소크기가 1024px 이라는 뜻 : 디바이스의 가로크기가
+1024px 이상인 경우 */
+/* 스크린까지 써야하지만 생략가능 */
+@media ( min-width:1024px){
+    body{
+        background: coral;
+    }
+}
+@media ( min-width:768px ) and (max-width:1023px){
+    body{
+        background-color: pink;
+    }
+    .container{
+        flex-wrap: wrap;
+    }
+    .child{
+        flex:1;
+        flex-basis: 300px;
+        /* 해당 요소의 가로크기의 최소기준 */
+    }
+}
+/* 디바이스 가로크기가 768px 이하일때 */
+@media (max-width:768px){
+    body{
+        background-color:yellow;
+    }
+    .container{
+        flex-direction: column;
+    }
+}
