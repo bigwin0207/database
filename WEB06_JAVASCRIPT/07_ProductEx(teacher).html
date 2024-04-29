@@ -5,45 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style type="text/css">
-        body{ 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
         }
         .container{
             width: 1000px;
             display: flex;
             height: 200px;
-            border: 1px solid red;
+            border:1px solid red;
             justify-content: space-between;
-            
         }
-        .box{
-            position: relative;
+        .box {
             width: 300px;
             height: 200px;
-            border: 1px dotted black;
-            overflow: hidden;
+            border:1px dotted black;
+            position: relative; 
+            overflow: hidden; 
+            transition-duration: 0.5s;
+            transition-delay: 0.3s;
         }
+
         .caption{
-            position: absolute;
-            width:300px;
-            height: 200px;
             background: black;
-            top:0px;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            left:0;
+            top:0;
             opacity: 0;
             transition-duration: 0.5s;
+            transition-delay: 0.3s;
         }
         .caption h1, .caption p{
             color: white;
             text-align: center;
         }
-        .box:hover .caption{
-            opacity: 0.6;
+        .box:hover {
+            transform: translateY(-20px);
         }
-    </style>    
-
+        .box:hover .caption{
+            opacity: 0.7;
+        }    
+    </style>
 </head>
 <body>
     <div class="container">
@@ -51,7 +57,7 @@
             <img src="images/prod1.jpg">
             <div class="caption">
                 <h1>상품 1</h1>
-                <p>상품 1: 설명 텍스트</p>
+                <p>상품1 : 설명 텍스트</p>
                 <p>가격 : 12,123원</p>
             </div>
         </div>
@@ -59,20 +65,18 @@
             <img src="images/prod2.jpg">
             <div class="caption">
                 <h1>상품 2</h1>
-                <p>상품 2: 설명 텍스트</p>
-                <p>가격 : 12,123원/p>
+                <p>상품2 : 설명 텍스트</p>
+                <p>가격 : 12,123원</p>
             </div>
         </div>
-        
         <div class="box">
             <img src="images/prod3.jpg">
             <div class="caption">
                 <h1>상품 3</h1>
-                <p>상품 3: 설명 텍스트</p>
+                <p>상품3 : 설명 텍스트</p>
                 <p>가격 : 12,123원</p>
             </div>
         </div>
     </div>
-    
 </body>
 </html>
