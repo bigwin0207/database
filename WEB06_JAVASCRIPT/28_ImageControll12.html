@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28_ImageControll12.html</title>
+    <style type="text/css">
+        img{ width:600px; height:400px; }
+        .view{position: relative; width:600px; height:400px; border:5px solid blue; overflow: hidden;}
+        .imgs{ position: absolute; width:4800px; height:400px; border:1px solid red; left:0; top:0; transition: 0.3s;}
+
+        #remote{position: relative; margin: 0 auto; width:400px; height:50px; top:350px; border:1px solid white; text-align: center;}
+        ul{list-style: none;  padding:0; margin:0; display: inline-block;}
+        li{float: left; width:20px; height:20px; border-radius: 50%; background: white; text-align: center; font-weight: bold; margin:15px 4px; cursor: pointer;}
+
+        li:nth-child(2){ background: black; color:white;}
+    </style>
+    <script type="text/javaScript">
+        var imgNum = 0;
+        var timer;
+        var state = false;
+
+        function moveLeft(){
+            if(state==true) return;
+            if(imgNum==0) return;
+            imgNum--;
+            var dist = -600*imgNum;
+            document.getElementById('imgs').style.left= dist+'px';
+            changeCss(imgNum);
+        }
+        function moveRight(){
+            if(state==true) return;
+            if(imgNum==7) return;
+            imgNum++;
+            var dist = -600*imgNum;
+            document.getElementById('imgs').style.left= dist+'px';
+            changeCss(imgNum);
+        }
+
+        function changeCss( num ){
+            for(var i=1; i<=8; i++){  // 전체 버튼(1~8) 흰배경 검은 글자
+                document.getElementById('btn' + i).style.background='white';
+                document.getElementById('btn' + i).style.color='black';
+            }
+            // 현재 버튼에 검은 배경 흰글자
+            document.getElementById('btn' + (num+1)).style.background='black';
+            document.getElementById('btn' + (num+1)).style.color='white';
+        }
+        function move(x){
+            if(state==true) return;
+            imgNum = x;
+            var dist = -600*imgNum;
+            document.getElementById('imgs').style.left= dist+'px';
+            changeCss(imgNum);
+        }
+
+        function moveAuto(){
+            if( state == true ){
+                state = false;
+                document.getElementById("btn").innerHTML = '▶';
+                window.clearInterval(timer);
+            }else{
+                state = true;
+                document.getElementById("btn").innerHTML = '■';
+                timer=window.setInterval(function(){
+                    imgNum++;
+                    if(imgNum > 7) imgNum=0;
+                    var dist = -600 * imgNum;
+                    document.getElementById("imgs").style.left = dist + 'px';
+                    changeCss(imgNum);
+                }, 1000);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="view">
+        <div class="imgs" id="imgs">
+            <img src="images/Koala.jpg" /><img src="images/Chrysanthemum.jpg" /><img src="images/Desert.jpg" /><img src="images/Hydrangeas.jpg" /><img src="images/Jellyfish.jpg" /><img src="images/Lighthouse.jpg" /><img src="images/Penguins.jpg" /><img src="images/Tulips.jpg" />
+        </div>
+        <div id="remote">
+            <ul>
+                <li onClick="moveLeft();">◁</li>
+                <li id='btn1' onClick="move(0);">1</li>
+                <li id='btn2'  onClick="move(1);">2</li>
+                <li id='btn3'  onClick="move(2);">3</li>
+                <li id='btn4'  onClick="move(3);">4</li>
+                <li id='btn5'  onClick="move(4);">5</li>
+                <li id='btn6'  onClick="move(5);">6</li>
+                <li id='btn7'  onClick="move(6);">7</li>
+                <li id='btn8'  onClick="move(7);">8</li>
+                <li onClick="moveRight();">▷</li>
+                <li id="btn" onClick="moveAuto();">▶</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
