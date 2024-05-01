@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_EffectEx.html</title>
+    <style type="text/css">
+        div{position: absolute; left: 0; top: 0; display: none;}
+        img{ width: 500px; height: 350px;}
+    </style>
+    <script src="script/jquery-3.7.1.min.js"></script>
+    <script type="text/javaScript">
+        // $(function(){
+        //     &('div').eq(0).fadeOut(1000);
+        //     &('div').eq(1).fadeOut(1000);
+        //     &('div').eq(2).fadeOut(1000);
+        //     &('div').eq(3).fadeOut(1000);
+        //     &('div').eq(4).fadeOut(1000);
+        //     &('div').eq(5).fadeOut(1000);
+
+        //     &('div').fadeOut(1000);
+        // });
+        var imgNum = 0;
+        $(function(){
+            window.setInterval(function(){
+                for(var i=0; i<=5; i++)
+                    $('div').eq(i).fadeOut(1000);
+                
+                $('div').eq(imgNum).fadeIn(1000);
+                imgNum++;
+                if(imgNum>5)imgNum=0;
+            },1500);
+        });
+    </script>
+</head>
+<body>
+    <div><img src="images/Desert.jpg" /></div>
+    <div><img src="images/Hydrangeas.jpg" /></div>
+    <div><img src="images/Chrysanthemum.jpg" /></div>
+    <div><img src="images/Koala.jpg" /></div>
+    <div><img src="images/Penguins.jpg" /></div>
+    <div><img src="images/Tulips.jpg" /></div>
+    
+</body>
+</html>
