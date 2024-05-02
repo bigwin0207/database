@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_Animate.html</title>
+    <style type="text/css">
+        div{
+            width: 50px; 
+            height: 50px; 
+            margin: 3px; 
+            background-color: orange; 
+            position: relative;
+        }
+    </style>
+    <script src="script/jquery-3.7.1.min.js"></script>
+    <script type="text/javaScript">
+        $(function(){
+            // $('div').mouseover(function(){
+            //     $(this).animate({left:500},1000);
+            // });
+            // $('div').mouseout(function(){
+            //     $(this).animate({left:0},1000);
+            // });
+            $('div').hover(
+            function(){$(this).animate({left:500},1000);},
+            function(){$(this).animate({left:0},1000);}
+            );
+
+            //$(this).css('left','500px'); - 자체적 transition-duration 이 없습니다.
+        });
+        
+
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

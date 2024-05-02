@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22_CardContent.html</title>
+    <style type="text/css">
+        section{width:100%; display: flex; justify-content: space-between;}
+        .media{
+            display: flex;
+            background: #EEEEEE;
+            width: 600px;
+            padding: 10px;
+            border:1px dotted black;
+            margin:10px;
+        }
+        .media img{
+            width: 100px;
+            flex:1;
+            margin-right: 10px;
+        }
+        .media .media-body{
+            flex: 3;
+        }
+        
+        /* 768~1024 media 세로로 */
+        @media(min-width: 768px) and (max-width: 1024px){
+            section{ flex-direction: column;}
+            .media{
+                width: 90%;
+                margin:10px;
+            }
+        }
+        /* 768미만 이미지와 media-body 가 세로로 */
+        @media(max-width: 767px){
+            section{ flex-direction: column;}
+            .media{
+                width: 90%;
+                margin:10px;
+                flex-direction: column;
+            }
+            .media img{
+                width:100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <section>
+        <div class="media">
+            <img src="images/photo-01.png">
+            <div class="media-body">
+                <h3>Feel the nature experience</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex fugiat exercitationem ducimus mollitia temporibus ut quia quos debitis excepturi, libero nulla neque quod suscipit 
+                </p>
+            </div>
+        </div>
+
+        <div class="media">
+            <img src="images/photo-02.png">
+            <div class="media-body">
+                <h3>Feel the nature experience</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex fugiat exercitationem ducimus mollitia temporibus ut quia quos debitis excepturi, libero nulla neque quod suscipit 
+                </p>
+            </div>
+        </div>
+
+        <div class="media">
+            <img src="images/photo-03.png">
+            <div class="media-body">
+                <h3>Feel the nature experience</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex fugiat exercitationem ducimus mollitia temporibus ut quia quos debitis excepturi, libero nulla neque quod suscipit 
+                </p>
+            </div>
+        </div>
+    </section>   
+</body>
+</html>
