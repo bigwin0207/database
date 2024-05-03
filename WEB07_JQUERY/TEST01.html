@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #view{
+            position: relative;
+            width: 1000px;
+            height: 400px;
+            margin: 0 auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        #imgs{
+            position: absolute;
+            width: 6100px;
+            height: 500px;
+            left: 0;
+            top: 0;
+            
+        }
+        img{width: 1000px; height: 400px;}
+        #remote{
+            position: absolute;
+            width: 298px;
+            height: 78px;
+            border: 1px solid white;
+            top: 320px;
+            left: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+
+        }
+        #remote div{
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            float: left;
+            margin: 15px 4px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 20px;
+            font-weight: bold;
+        }
+        #remote .selected{
+            width:60px;
+            border-radius: 20px;
+            color:white;
+        }
+        #pageNumbers{
+            position: relative;
+            width: 70px;
+            height: 50px;
+            color: white;
+            font-size: 120%;
+            font-weight: bold;
+            left: 925px;
+            top: -80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        #box{
+            width: 6100px;
+        }
+        #base{
+            position: relative;
+            width: 1000px;
+            height: 78px;
+            background: black;
+            opacity: 0.6;
+            transition-duration: 0.5s;
+            top:270px;
+            left: 0;
+            float: left;    
+        }
+        #base .title{
+            color: white;
+            font-size: 120%;
+            font-weight: bold;    
+        }
+        #base .text{
+            color: white;
+            font-size: 110%;     
+        }
+        
+
+        
+        
+    </style>
+    <script src="script/jquery-3.7.1.min.js"></script>
+    <script type="text/javaScript">
+        $(function(){
+            var imgNum= 0;
+            var timer;
+            timer = window.setInterval(function(){
+                imgNum++;
+                if(imgNum>5) imgNum=0;
+                dist = -1000 * imgNum;
+                $('#imgs').animate({left:dist},1000);
+                $('#remote div').removeClass('selected');
+                $('#remote div').eq(imgNum).addClass('selected');
+                $('#remote div').removeClass('#base');
+                $('#remote div').eq(imgNum).addClass('#base');
+            },1000) ;
+            
+            $(function(){
+                var currentNumber = 1; 
+                function updateNumber() {
+                    $('#numberDisplay').text(currentNumber);
+                }
+
+                var timer = window.setInterval(function(){
+                    currentNumber++;
+                    if (currentNumber > 6) {currentNumber = 1;}
+                    updateNumber();
+                }, 1000);
+            });                
+        });
+    </script>    
+</head>
+<body>
+    <div id="view">
+        <div id="imgs">
+            <img src="images/Chrysanthemum.jpg"><img src="images/Desert.jpg"><img src="images/Hydrangeas.jpg"><img src="images/Jellyfish.jpg"><img src="images/Lighthouse.jpg"><img src="images/Tulips.jpg">
+        </div>
+        <div id="remote">
+            <div class="selected"></div><div></div><div></div><div></div><div></div><div></div>
+        </div>
+        <div id="pageNumbers">
+            <span id="numberDisplay">1</span><span>/6</span>
+        </div>
+        
+        
+        
+    </div>
+</body>
+</html>
