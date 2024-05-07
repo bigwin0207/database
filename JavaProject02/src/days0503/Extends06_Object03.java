@@ -4,6 +4,18 @@ class Line{
    Line(int x, int y){
       this.x = x; this.y =y;
    }
+   public boolean equals(Object obj) {
+	      //obj와 this하고 멤버변수 x와 y를 비교해서 같으면 true 리턴, 다르면 false 리턴
+	      //a1 -> this  a2 -> obj
+	      //부모참조변수가 자식 인스턴스의 멤버변수에 접근이 불가능하므로 형변환이 필요합니다.
+	      
+	      //형변환전에 obj가 형변환이 가능한 객체인지 조회하고 다르면 false를 리턴하고 종료
+	      if (!(obj instanceof Line)) return false;
+	      
+	      Line target = (Line)obj;
+	      boolean result = (this.x == target.x) && (this.y == target.y);
+	      return result;
+	   }
 }
 public class Extends06_Object03 {
 
