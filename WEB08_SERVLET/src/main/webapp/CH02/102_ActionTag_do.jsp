@@ -11,18 +11,18 @@ String logincheck = request.getParameter("loginCheck");
 
 
 // 1. response.sendRedirect 를 이용하는 경우
- if(userid.equals("scott")&& pwd.equals("1234")){
+/*   if(userid.equals("scott")&& pwd.equals("1234")){
 	if(logincheck.equals("user")){
-		response.sendRedirect("103_ActionUser.jsp?userID=" + userid + "&userName=" + URLEncoder.encode("홍길동","UTF-8"));
+		response.sendRedirect("103_ActionUser.jsp?userID=" + userid + "&name=" + URLEncoder.encode("홍길동","UTF-8"));
 	}else{
-		response.sendRedirect("104_ActionManager.jsp?userID=" + userid + "&userName=" + URLEncoder.encode("홍길동","UTF-8"));
+		response.sendRedirect("104_ActionManager.jsp?userID=" + userid + "&name=" + URLEncoder.encode("홍길동","UTF-8"));
 	}
  }else{
 		//아이디 비번이 맞지 않는 경우
 		response.sendRedirect("101_ActionTag.jsp"); 
-	}
+	}  */
 // 2. forward를 이용하는 경우
-/* String url =null;
+/*  String url =null;
  if(userid.equals("scott")&& pwd.equals("1234")){
 	if(logincheck.equals("user")){
 		url="103_ActionUser.jsp";
@@ -33,7 +33,27 @@ String logincheck = request.getParameter("loginCheck");
 	 response.sendRedirect("101_ActionTag.jsp");
  }
 		request.setAttribute("name", "홍길남");
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response); */
+		RequestDispatcher dp = request.getRequestDispatcher(url);
+		dp.forward(request, response); 
+		 */
+		// 3. 액션태그를 이용하는 경우
+		 if( userid.equals("scott") && pwd.equals("1234") ){
+		 	if( logincheck.equals("user") ){
+		 %>
+		 		<jsp:forward page="103_ActionUser.jsp">
+		 				<jsp:param  name="name"  value='<%=URLEncoder.encode("홍길동", "UTF-8")%>' />
+		 		</jsp:forward>
+		 <%		
+		 	}else{
+		 %>
+		 		<jsp:forward page="104_ActionManager.jsp">
+		 				<jsp:param  name="name"  value='<%=URLEncoder.encode("홍길동", "UTF-8")%>' />
+		 		</jsp:forward>
+		 <%	
+		 	}
+		 }else{
+		 	response.sendRedirect("101_ActionTag.jsp");
+		 }
+		
 %>
 
