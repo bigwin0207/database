@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-body{ display: flex; justify-content: center; align-items: center; height:100vh; }
+body{ display: flex; justify-content: center;  /* align-items: center; height:100vh;  */ }
 .login-form{ width:600px; background: white; box-shadow: 5px 5px 5px #444; border-radius: 10px; display: flex; flex-direction: column; padding:30px; border:1px solid #444;}
 .login-form h2{ font-weight: normal;  font-size: 28px; margin:0; margin-bottom:20px;}
 .field{ display: flex; margin: 20px 0; }
@@ -11,6 +11,23 @@ input{ flex:4;  padding:5px; border-radius: 7px; border: 1px solid #AAA;}
 .btn-login:last-child{background:white; color:blue; border:1px solid blue;}
 .sns-login{ display: flex; margin:20px 0; }
 .btn{ flex:1; margin: 10px 3px; padding:7px; border: none;  font-size: 20px; border-radius: 5px; color: #fff; }
+
+#main_container{ width:1024px; border:1px dotted red; display:flex; flex-direction: column;}
+.logininfo{display:flex; padding:20px 5px;}
+.login{}
+.writebutton{ margin-left:auto;}
+
+
+.board{ display: flex; flex-direction: column;}
+.title_row{ display: flex; }
+.title_col{ flex:1; background: blue; color:white; text-align: center; height:20px; line-height: 20px; 
+padding:10px; margin:2px;}
+.title_col:nth-child(2){flex:4;}
+
+.row{display: flex;}
+.col{ flex:1; text-align: center; height:20px; line-height: 20px; border:1px dotted blue;
+padding:10px; margin:1px;}
+.col:nth-child(2){flex:4;}
 
 .btn.facebook { background: #3b5999; }
 .btn.twitter {background-color: #55acee; }

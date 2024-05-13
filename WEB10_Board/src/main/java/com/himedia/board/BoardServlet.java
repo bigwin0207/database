@@ -8,8 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import com.himedia.board.controller.action.Action;
-import com.himedia.board.controller.action.LoginAction;
-import com.himedia.board.controller.action.LoginFormAction;
+import com.himedia.board.controller.action.member.LoginAction;
+import com.himedia.board.controller.action.member.LoginFormAction;
 
 
 public class BoardServlet extends HttpServlet {
@@ -25,21 +25,31 @@ public class BoardServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		
-		Action ac = null;
-		
 		String command = request.getParameter("command");
-		System.out.print("command : " + command);
+		if(command == null)System.out.println("1. command 전달오류");
+		else System.out.print("command : " + command);
 		
-		if(command.equals("loginForm")) ac = new LoginFormAction();
-		else if(command.equals("login")) ac  = new LoginAction();
-		ac.execute(request,response);
+		
+		Action ac = null;
+		ActionFactory af = ActionFactory.getInstance();
+		ac = af.getAction(command);
+		if(ac == null)System.out.println("2. Action 전달오류");
+		else ac.execute(request, response);
+		
+		/*
+		 * if(command.equals("loginForm")) ac = new LoginFormAction(); else
+		 * if(command.equals("login")) ac = new LoginAction();
+		 * ac.execute(request,response);
+		 */
 		 
 			/*
 			 * if(command.equals("loginForm")) {
 			 * 
-			 * // LoginFormAction lfa = new LoginFormAction(); ac = new LoginFormAction();
-			 * //lfa.execute(request,response); // ac.execute(request,response); }else
-			 * if(command.equals("login")) { ac = new LoginAction(); }
+			 * // LoginFormAction lfa = new LoginFormAction(); 
+			 * ac = new LoginFormAction();
+			 * //lfa.execute(request,response); // 
+			 * ac.execute(request,response); }
+			 * else if(command.equals("login")) { ac = new LoginAction(); }
 			 * ac.execute(request,response);
 			 */
 		
