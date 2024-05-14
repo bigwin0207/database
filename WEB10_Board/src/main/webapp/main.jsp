@@ -13,6 +13,7 @@
 <meta charset="UTF-8">
 <title>Board Main</title>
 <link rel="stylesheet" type="text/css" href="css/board.css"/>
+<script src="script/board.js"></script>
 </head>
 <body>
 <div id= "main_container">
@@ -36,8 +37,10 @@
 	</div>
 	<c:forEach items="${boardList}" var="board">
 		<div class="row">
-			<div class="col">${board.num}</div><div class="col">${board.title}</div>
-			<div class="col">${board.userid}</div><div class="col"><fmt:formatDate value="${board.writedate}"/></div>
+			<div class="col">${board.num}</div>
+			<div class="col"><a style="text-decoration:none" href="board.do?command=boardView&num=${board.num}">${board.title}</a></div>
+			<div class="col">${board.userid}</div>
+			<div class="col"><fmt:formatDate value="${board.writedate}"/></div>
 			<div class="col">${board.readcount}</div>
 		</div>
 	</c:forEach>

@@ -29,14 +29,36 @@ padding:10px; margin:2px;}
 padding:10px; margin:1px;}
 .col:nth-child(2){flex:4;}
 
+#main_container h2{ margin: 0 auto;}
+
 .btn.facebook { background: #3b5999; }
 .btn.twitter {background-color: #55acee; }
 .btn.google { background-color: #dd4b39; }
 .btn.kakao { background-color: rgb(214, 214, 27); color:black}
 
+.insertBoard{ display:flex; flex-direction: column; padding:12px;}
+.insertBoard .field{margin: 10px 0;}
+.insertBoard .field textarea{flex:4;}
+.insertBoard .field label{}
+.insertBoard .field input{margin: 1px;}
+.insertBoard .field input[type=submit]{padding:10px; background:blue; color:white; font-weight:bold; font-size:130%;}
+
+.board2 .field{margin: 0px;}
+.board2 .label{flex:1; background:blue; color:white; text-align:center; font-weight:bold;
+font-size:120%; padding: 15px 0; margin:1px; border-radius: 8px;}
+.board2 .text{flex:4; font-size:110%;padding: 15px 10px; border:1px dotted blue; margin:1px;}
+
+.reply{disply:flex; flex-direction:column; margin-top:20px;}
+.reply_row{display:flex;}
+.reply_col{padding:10px; text-align:center; margin:1px; border-radius:3px; border:1px dotted blue;}
+.reply_col:nth-child(1){flex:1;}
+.reply_col:nth-child(2){flex:1;}
+.reply_col:nth-child(3){flex:5;}
+.reply_col:nth-child(4){flex:1;}
+.reply_title{background:blue; color:white;}
 @media (max-width:768px){
      .login-form{ width:100%;}
-     .field{ flex-direction: column; margin:10px 0;}
+     .field{ flex-direction: column; margin:20px 0;}
      .login-button{margin-top:15px;}
      .btn-login { flex:1; }
      .sns-login { flex-direction: column; }
