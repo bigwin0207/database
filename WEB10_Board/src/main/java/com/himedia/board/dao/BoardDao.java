@@ -119,7 +119,7 @@ public class BoardDao {
 			pstmt.setString(2, bdto.getEmail());
 			pstmt.setString(3, bdto.getTitle());
 			pstmt.setString(4, bdto.getContent());
-			pstmt.setInt(4, bdto.getNum());
+			pstmt.setInt(5, bdto.getNum());
 			pstmt.executeUpdate();
 			}catch(SQLException e) {
 			e.printStackTrace();
@@ -145,7 +145,7 @@ public class BoardDao {
 	public ArrayList<ReplyDto> getReply(int num) {
 		ArrayList<ReplyDto> list = new ArrayList<ReplyDto>();  
 		con = Dbm.getConnection();
-		String sql="select * from reply board num=?";
+		String sql="select * from reply where boardnum=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
@@ -154,7 +154,7 @@ public class BoardDao {
 				ReplyDto rdto = new ReplyDto();
 				rdto.setReplynum(rs.getInt("replynum"));
 				rdto.setBoardnum(rs.getInt("boardnum"));
-				rdto.setUserid(rs.getString("Userid"));
+				rdto.setUserid(rs.getString("userid"));
 				rdto.setContent(rs.getString("content"));
 				rdto.setWritedate(rs.getTimestamp("writedate"));
 				list.add(rdto);

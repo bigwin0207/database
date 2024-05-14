@@ -25,11 +25,7 @@
 		</div>
 		<div class="field">
 			<div class="label">작성일</div>
-			<div class="text"><fmt:formatDate value="${board.writedate}"/></div>
-		</div>
-		<div class="field">
-			<div class="label">이메일</div>
-			<div class="text">${board.email}</div>
+			<div class="text"><fmt:formatDate value="${board.writedate}"/>
 		</div>
 		<div class="field">
 			<div class="label">제목</div>

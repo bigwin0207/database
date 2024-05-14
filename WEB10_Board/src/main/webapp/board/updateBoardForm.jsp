@@ -12,10 +12,10 @@
 </head>
 <body>
 <div id="main_container">
-	<h2>게시글 등록</h2>
+	<h2>게시글 수정</h2>
 	<div class="board">
 	<form class="insertBoard" method="post" name="insertBoard" action="board.do">
-		<div class="field"><label>작성자</label><input type="text" name="userid" value="${loginUser.userid}" readonly /></div>
+		<div class="field"><label>작성자</label><input type="text" name="userid" value="${board.userid}" readonly /></div>
 		<div class="field"><label>비밀번호</label><input style="flex:2" type="password" name="pass" /><div  style="flex:2; margin-left:20px;">게시물 작성 시 입력한 비밀번호 입력</div></div>
 		<div class="field"><label>이메일</label><input type="text" name="email" value="${board.email}"/></div>
 		<div class="field"><label>제목</label><input type="text" name="title"  value="${board.title}"/></div>

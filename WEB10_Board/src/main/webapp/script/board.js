@@ -52,7 +52,7 @@ function joinCheck(){
 		return false;
 		}else if(document.join.userid.value != document.join.reid.value){
 		alert("아이디 중복체크 후 진행하세요.");
-		document.join.phone.focus();
+		document.join.userid.focus();
 		return false;
 		}else{
 			return true;
@@ -61,9 +61,9 @@ function joinCheck(){
 
 
 function updateCheck(){
-	if(document.join.pwd.value==""){
+	if(document.update.pwd.value==""){
 		alert("비밀번호를 입력하세요");
-		document.join.userid.focus();
+		document.update.pwd.focus();
 		return false;
 		}else if(document.update.pwd_check.value !=document.update.pwd.value){
 		alert("비밀번호 확인이 일치하지 않습니다.");
@@ -148,7 +148,7 @@ function updateBoardCheck(pass){
 
 function deleteBoard(pass,num){
 	var inputpass =prompt('삭제에 필요한 비밀번호를 입력하세요.','');
-	if(pass!= inputpass){
+	if(pass != inputpass){
 		alert('비밀번호가 일치하지 않습니다');
 		return;
 	}else{

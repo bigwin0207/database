@@ -26,6 +26,7 @@ public class BoardViewAction implements Action {
 		
 		ArrayList<ReplyDto>list = bdao.getReply(num);
 		request.setAttribute("replyList", list);
+		
 		request.setAttribute("board", bdto);
 		request.getRequestDispatcher("board/boardView.jsp").forward(request, response);
 	}
