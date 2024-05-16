@@ -15,8 +15,8 @@ public class LogoutAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-	      session.invalidate();
-	      RequestDispatcher rd = request.getRequestDispatcher("member/loginForm.jsp");
-	      rd.forward(request, response);
+		session.invalidate();
+		RequestDispatcher rd = request.getRequestDispatcher("member/loginForm.jsp");
+		rd.forward(request, response);
 	}
 }

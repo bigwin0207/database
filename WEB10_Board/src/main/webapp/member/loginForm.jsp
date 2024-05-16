@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>loginForm.jsp</title>
-<link rel="stylesheet" type="text/css" href="css/board.css"/>
+<link rel="stylesheet" type="text/css" href="css/board.css">
 <script src="script/board.js"></script>
 </head>
 <body>
@@ -19,9 +19,9 @@
         </div>
         <div class="field">${message}</div>
         <div class="login-button">
-            <input type="submit" class="btn-login" value="log in" onClick="loginCheck()" />
+            <input type="submit" class="btn-login" value="log in" onClick="loginCheck()"/>
             <input type="button" class="btn-login" value="join" 
-            onClick="location.href='board.do?command=joinForm'"/>
+            onClick="location.href='board.do?command=joinForm' "/>
         </div>
         <div class="sns-login">
          <input type="button" class="btn facebook" value="Facebook" />

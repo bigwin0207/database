@@ -1,7 +1,6 @@
 package com.himedia.board.dto;
 
 public class MemberDto {
-	
 	private String userid;
 	private String name;
 	private String pwd;
@@ -38,5 +37,5 @@ public class MemberDto {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
+	
 }

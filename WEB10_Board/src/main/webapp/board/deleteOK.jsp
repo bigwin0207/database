@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <script type="text/javascript">
-alert("게시물 삭제가 완료되었습니다");
-location.href='board.do?command=main';
+	alert("게시물 삭제가 완료되었습니다");
+	location.href='board.do?command=main';
 </script>
-
 </body>
 </html>

@@ -16,19 +16,18 @@ public class BoardViewAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		int num=Integer.parseInt(request.getParameter("num"));
+		int num = Integer.parseInt(request.getParameter("num"));
 		BoardDao bdao = BoardDao.getInstance();
-		// 조회수 증가
+		
+		//조회수 증가
 		bdao.plusReadCount(num);
 		//게시물 상세 조회
 		BoardDto bdto = bdao.getBoard(num);
+		request.setAttribute("board", bdto);
 		
-		ArrayList<ReplyDto>list = bdao.getReply(num);
+		ArrayList<ReplyDto> list = bdao.getReply(num);
 		request.setAttribute("replyList", list);
 		
-		request.setAttribute("board", bdto);
 		request.getRequestDispatcher("board/boardView.jsp").forward(request, response);
 	}
-
 }

@@ -14,9 +14,13 @@ public class UpdateBoardAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		BoardDao bdao = BoardDao.getInstance();
 		BoardDto bdto = new BoardDto();
+		//자바스크립트로 점검.
+		
+		//String pass = request.getParameter("pass");
+		//int num = Integer.parseInt(request.getParameter("num"));
+		//BoardDto bdto = bdao.getBoard(num);
 		
 		bdto.setNum(Integer.parseInt(request.getParameter("num")));
 		bdto.setUserid(request.getParameter("userid"));
@@ -27,11 +31,7 @@ public class UpdateBoardAction implements Action {
 		
 		bdao.updateBoard(bdto);
 		
-		// response.sendRedirect("board.do?=command=main");
+		//response.sendRedirect("board.do?command=main");
 		response.sendRedirect("board.do?command=boardViewWithoutCnt&num=" + bdto.getNum());
-		//request.getRequestDispatcher("board.do?=command=main").forward(request,response);
-		// request.getRequestDispatcher("board.do?=command=boardView").forward(request,response);
-		}
 	}
-
-
+}
