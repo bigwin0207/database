@@ -2,6 +2,7 @@ package com.himedia.board;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,6 +14,11 @@ import com.himedia.board.controller.action.member.JoinFormAction;
 import com.himedia.board.controller.action.member.LoginAction;
 import com.himedia.board.controller.action.member.LoginFormAction;
 
+
+@MultipartConfig(
+		fileSizeThreshold = 1024*1024, 
+		maxFileSize = 1024*1024*5, 
+		maxRequestSize =1024*1024*5*5)
 public class BoardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

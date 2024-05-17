@@ -41,6 +41,7 @@ public class BoardDao {
 				bdto.setContent(rs.getString("content"));
 				bdto.setReadcount(rs.getInt("readcount"));
 				bdto.setWritedate(rs.getTimestamp("writedate"));
+				bdto.setImage(rs.getString("image"));
 				list.add(bdto);
 			}
 		} catch (SQLException e) { e.printStackTrace(); }
@@ -50,7 +51,7 @@ public class BoardDao {
 
 	public void insertBoard(BoardDto bdto) {
 		con = Dbm.getConnection();
-		String sql = "insert into board(userid, pass, email, title, content) values(?,?,?,?,?)";
+		 String sql = "insert into board(userid, pass, email, title, content, image, savefilename) values(?,?,?,?,?,?,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bdto.getUserid());
@@ -58,6 +59,8 @@ public class BoardDao {
 			pstmt.setString(3, bdto.getEmail());
 			pstmt.setString(4, bdto.getTitle());
 			pstmt.setString(5, bdto.getContent());
+			pstmt.setString(6, bdto.getImage());
+			pstmt.setString(7, bdto.getSavefilename());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -94,6 +97,8 @@ public class BoardDao {
 				bdto.setContent(rs.getString("content"));
 				bdto.setReadcount(rs.getInt("readcount"));
 				bdto.setWritedate(rs.getTimestamp("writedate"));
+				bdto.setImage(rs.getString("image"));
+				bdto.setSavefilename(rs.getString("savefilename"));
 			}
 		} catch (SQLException e) { e.printStackTrace(); }
 		finally { Dbm.close(con, pstmt, rs); }		
@@ -102,14 +107,18 @@ public class BoardDao {
 
 	public void updateBoard(BoardDto bdto) {
 		con = Dbm.getConnection();
-		String sql = "update board set pass=?, email=?, title=?, content=? where num=?";
+		String sql = "update board set pass=?, email=?, title=?, content=?," 
+		+"image=?, savefilename=? where num=?";
 		try {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bdto.getPass());
 			pstmt.setString(2, bdto.getEmail());
 			pstmt.setString(3, bdto.getTitle());
 			pstmt.setString(4, bdto.getContent());
-			pstmt.setInt(5, bdto.getNum());
+			pstmt.setString(5, bdto.getImage());
+			pstmt.setString(6, bdto.getSavefilename());
+			pstmt.setInt(7, bdto.getNum());
+			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

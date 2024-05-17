@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>
-filename: ${filename}<br/>
-saveFilename : ${saveFilename}<br/>
-<img src="upload/${saveFilename}"/>
-</h3>
+<% response.sendRedirect("shop.do?command=index"); %>
 </body>
 </html>

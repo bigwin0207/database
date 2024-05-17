@@ -50,6 +50,9 @@
 					<c:if test="${board.replycnt >0}">
 					<span style= "color:red; font-weight:bold">[${board.replycnt}]</span>
 					</c:if>
+					<c:if test="${not empty board.image}">
+					<span style= "color:blue; font-weight:bold; font-size:90%;">[img]</span>
+					</c:if>
 				</div>
 				<div class="col">${board.userid}</div>
 				<div class="col"><fmt:formatDate value="${board.writedate}"/></div>

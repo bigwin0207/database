@@ -52,7 +52,7 @@ insert into board(pass, userid, email, title,content)
 values('1234','hong5','hong5@naver.com','맛집 공유','맛집공유 및 추천해주세요');
 
 select*from member
-select*from board
+select*from board order by num desc;
 
 
 
@@ -87,3 +87,10 @@ insert into reply( boardnum, userid, content)values(6,'hong1','반갑습니다. 
 insert into reply( boardnum, userid, content)values(6,'hong2','또 뵐게요 안녕히 가세요');
 
 select*from board limit 10 offset 10;
+
+alter table board add column image varchar(50);
+
+alter table board add column savefilename varchar(50);
+
+ALTER TABLE `board`.`board` 
+CHANGE COLUMN `content1` `content` VARCHAR(1000) NOT NULL ;
