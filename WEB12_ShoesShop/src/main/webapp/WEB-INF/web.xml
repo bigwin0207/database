@@ -4,7 +4,7 @@
     <description></description>
     <display-name>ShoesShopServler</display-name>
     <servlet-name>ShoesShopServler</servlet-name>
-    <servlet-class>com.himedia.shop.ShoesShopServler</servlet-class>
+    <servlet-class>com.himedia.shop.controller.ShoesShopServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShoesShopServler</servlet-name>

@@ -42,8 +42,20 @@ public class ProductDao {
 		public ArrayList<ProductVO> newList() {
 			ArrayList<ProductVO> list = new ArrayList<ProductVO>();
 			con = Db.getConnection();
-			
-			Db.close(con, pstmt, rs);			
+			String sql = "select * from new_pro_view";
+			try {
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while(rs.next()){
+				ProductVO pvo = new ProductVO(); 
+				pvo.setPseq( rs.getInt("pseq"));
+				pvo.setName(rs.getString("name"));
+				pvo.setPrice2(rs.getInt("price2"));
+				pvo.setImage( rs.getString("image"));
+				list.add(pvo);
+			}
+			} catch (SQLException e) { e.printStackTrace();
+			}finally{ Db.close(con, pstmt, rs); } 
 			return list;
 		}
 }

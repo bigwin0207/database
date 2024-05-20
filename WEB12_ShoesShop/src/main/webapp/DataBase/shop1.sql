@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS member;
 DROP TABLE IF EXISTS product;
 
 
-
+select * from address;
 
 /* Create Tables */
 
