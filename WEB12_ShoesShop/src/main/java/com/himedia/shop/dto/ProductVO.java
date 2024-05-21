@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class ProductVO {
 	private Integer pseq;
 	private String name;
-	private Integer kind;
+	private String kind;
 	private Integer price1;
 	private Integer price2;
 	private Integer price3;
@@ -14,8 +14,15 @@ public class ProductVO {
 	private String useyn;
 	private String bestyn;
 	private Timestamp indate;
+	private String savefilename;
 	
 	
+	public String getSavefilename() {
+		return savefilename;
+	}
+	public void setSavefilename(String savefilename) {
+		this.savefilename = savefilename;
+	}
 	public Integer getPseq() {
 		return pseq;
 	}
@@ -28,10 +35,10 @@ public class ProductVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getKind() {
+	public String getKind() {
 		return kind;
 	}
-	public void setKind(Integer kind) {
+	public void setKind(String kind) {
 		this.kind = kind;
 	}
 	public Integer getPrice1() {

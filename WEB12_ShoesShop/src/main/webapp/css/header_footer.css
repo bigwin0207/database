@@ -61,7 +61,7 @@ header{
 	height:3px;
 	background-color: blueviolet;
 	margin:10px auto;
-	/*position:absolute;*/
+	position:absolute;
 	left:10px;
 }
 .hmenu div:nth-child(1){ top:5px; }

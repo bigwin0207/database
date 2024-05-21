@@ -10,8 +10,14 @@
 <link rel="stylesheet" href="css/header_footer.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/section.css">
+<link rel="stylesheet" href="css/product.css">
+<link rel="stylesheet" href="css/mypage.css">
 
+
+<script src="script/jquery-3.7.1.min.js"></script>
 <script src="script/member.js"></script>
+<script src="script/mypage.js"></script>
+
 
 </head>
 <body>
@@ -32,7 +38,7 @@
 							<a href="shop.do?command=logout">LOGOUT</a>
 					</c:otherwise>
 			</c:choose>
-			<a href="">CART</a>
+			<a href="shop.do?command=cartList">CART</a>
 			<a href="">MY PAGE</a>
 			<a href="">고객센터</a>
 			
@@ -40,12 +46,11 @@
 		<div class="hmenu"><div></div><div></div><div></div>		</div>
 	</nav>
 	<nav id="category_menu">
-			
-			<a href="">Heels</a>
-			<a href="">Boots</a>
-			<a href="">Sandal</a>
-			<a href="">Sneakers</a>
-			<a href="">Sleeper</a>
+			<a href="shop.do?command=category&kind=1">Heels</a>
+			<a href="shop.do?command=category&kind=2">Boots</a>
+			<a href="shop.do?command=category&kind=3">Sandal</a>
+			<a href="shop.do?command=category&kind=4">Sneakers</a>
+			<a href="shop.do?command=category&kind=5">Sleeper</a>
 	</nav>
 		
 </header>

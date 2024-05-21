@@ -38,16 +38,16 @@ insert into cart(userid,pseq,quantity)values('two', 3,1);
 -- orders 와 order_detail
 -- orders와 order_detail 추가
 insert into orders(userid)values('one');
-insert into orders_detail(oseq, pseq, quantity)values( 1, 2, 1);
-insert into orders_detail(oseq, pseq, quantity)values( 1, 3, 2);
+insert into order_detail(oseq, pseq, quantity)values( 1, 2, 1);
+insert into order_detail(oseq, pseq, quantity)values( 1, 3, 2);
 
 insert into orders(userid)values('two');
-insert into orders_detail(oseq, pseq, quantity)values( 2, 4, 3);
-insert into orders_detail(oseq, pseq, quantity)values( 2, 5, 2);
+insert into order_detail(oseq, pseq, quantity)values( 2, 4, 3);
+insert into order_detail(oseq, pseq, quantity)values( 2, 5, 2);
 
 insert into orders(userid)values('one');
-insert into orders_detail(oseq, pseq, quantity)values( 3, 3, 1);
-insert into orders_detail(oseq, pseq, quantity)values( 3, 2, 1);
+insert into order_detail(oseq, pseq, quantity)values( 3, 3, 1);
+insert into order_detail(oseq, pseq, quantity)values( 3, 2, 1);
 
 -- qna
 insert into qna (subject, content, userid) 
@@ -97,8 +97,9 @@ create or replace view best_pro_view
 as
 select pseq, name, price2, image from product where bestyn='Y' order by indate desc limit 4;
 
+select * from orders_detail;
 
-
+alter table orders_detail alter column result set default 1;
 
 
 
