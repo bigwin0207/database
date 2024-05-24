@@ -36,7 +36,6 @@ public class CartListAction implements Action {
 			request.setAttribute("cartList", list);
 			request.getRequestDispatcher("mypage/cartList.jsp").forward(request, response);
 		}
-		
 	}
 
 }

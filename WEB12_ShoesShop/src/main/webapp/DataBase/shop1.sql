@@ -154,4 +154,22 @@ ALTER TABLE orders_detail
 ;
 
 
+CREATE TABLE admins
+(
+	adminid varchar(30) not null,
+	pwd  varchar(30) not null,
+	name  varchar(30) not null,
+	phone  varchar(30) not null,
+	primary key (adminid)
+);
+
+
+
+
+
+
+
+
+
+
 

@@ -17,7 +17,7 @@ public class Db {
 		try {
 			Context initContext = new InitialContext();
 			Context envContext = (Context)initContext.lookup("java:/comp/env");
-			DataSource ds =(DataSource)envContext.lookup("jdbc/MysqlDB");
+			DataSource ds =(DataSource)envContext.lookup("jdbc/MysqlDB/shop");
 			con = ds.getConnection();
 		}catch (NamingException e) { e.printStackTrace();
 		}catch (SQLException e ) { e.printStackTrace();

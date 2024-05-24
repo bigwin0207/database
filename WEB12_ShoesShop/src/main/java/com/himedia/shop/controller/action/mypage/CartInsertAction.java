@@ -4,7 +4,6 @@ import java.io.IOException;
 
 import com.himedia.shop.controller.action.Action;
 import com.himedia.shop.dao.CartDao;
-import com.himedia.shop.dao.ProductDao;
 import com.himedia.shop.dto.CartVO;
 import com.himedia.shop.dto.MemberVO;
 
@@ -31,10 +30,10 @@ public class CartInsertAction implements Action {
 			cvo.setUserid(mvo.getUserid());
 			cvo.setPseq(pseq);
 			cvo.setQuantity(quantity);
-			
 			cdao.insertCart(cvo);
+			response.sendRedirect("shop.do?command=cartList");
 		}
-		response.sendRedirect("shop.do?command=cartList");
+		
 
 	}
 

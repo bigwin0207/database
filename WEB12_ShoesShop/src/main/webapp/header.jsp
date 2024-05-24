@@ -26,7 +26,7 @@
 
 <header>
 	<nav id="top_menu">
-		<div id="logo"><img src="images/logo.png" width="180" height="100"></div>
+		<div id="logo" ><img src="images/logo.png" width="180" height="100" onClick="location.href='shop.do?command=index'" ></div>
 		<div class="gnb">
 			<c:choose>
 					<c:when test="${empty loginUser}">
@@ -39,8 +39,8 @@
 					</c:otherwise>
 			</c:choose>
 			<a href="shop.do?command=cartList">CART</a>
-			<a href="">MY PAGE</a>
-			<a href="">고객센터</a>
+			<a href="shop.do?command=mypage">MY PAGE</a>
+			<a href="shop.do?command=qnaList">고객센터</a>
 			
 		</div>
 		<div class="hmenu"><div></div><div></div><div></div>		</div>

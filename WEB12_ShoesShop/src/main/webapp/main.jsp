@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="header.jsp" %>
-
+<%@ include file="header.jsp" %> <!-- header.jsp를 현재 jsp에 포함 시킨다. -->
 <!-- main.jsp 의 내용 -->
 <div id="main_img">
 	<img src="images/main_img.jpg"/>
@@ -24,7 +23,7 @@
 						<div id="item">
 								<div>
 										<a href="shop.do?command=productDetail&pseq=${productVO.pseq}">
-												<img src="product_images/${productVO.image}"/>
+									<img src="product_images/${productVO.image}"/>
 										</a>
 								</div>
 								<div>
@@ -86,5 +85,6 @@
 		</c:forEach>
 	</div>
 </div>
+
 
 <%@ include file="footer.jsp" %>

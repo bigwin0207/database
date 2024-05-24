@@ -1,12 +1,12 @@
 function go_cart(){
-	if(document.formm.quantity.value ==""){
+	if(document.formm.quantity.value==""){
 		alert("수량을 입력하세요");
 		document.formm.quantity.focus();
 	}else{
 		document.formm.action = 'shop.do?command=cartInsert';
 		document.formm.submit();
 	}
-	
+
 }
 
 function go_cart_delete(){
@@ -81,6 +81,33 @@ function go_order(){
 	}
 }
 
-	
-	
-	
+function go_updateMember(){
+	if(document.joinForm.pwd.value ==""){
+		alert("비밀번호를 입력해 주세요.");
+		document.joinForm.pwd.focus();
+	}else if(document.joinForm.pwd.value != document.joinForm.pwdCheck.value){
+		alert("비밀번호와 비밀번호 확인이 일치하지 않습니다.");
+		document.joinForm.pwd.focus();	
+	}else if(document.joinForm.name.value ==""){
+		alert("이름을 입력해 주세요.");
+		document.joinForm.name.focus();	
+	}else if(document.joinForm.phone.value ==""){
+		alert("전화번호를 입력해 주세요.");
+		document.joinForm.phone.focus();	
+	}else if(document.joinForm.email.value ==""){
+		alert("이메일을 입력해 주세요.");
+		document.joinForm.email.focus();	
+	}else {
+		document.joinForm.submit();	
+	}
+}
+
+function withdraw(){
+   var ans = confirm("정말로 탈퇴하시겠습니까?");
+   if(ans){
+      location.href="shop.do?command=deleteMember"
+   }
+}
+
+
+

@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.himedia.shop.dto.CartVO;
-import com.himedia.shop.dto.MemberVO;
 import com.himedia.shop.util.Db;
 
 public class CartDao {
@@ -21,7 +20,7 @@ public class CartDao {
 	ResultSet rs =null;
 	
 	public void insertCart(CartVO cvo) {
-			String sql ="insert into Cart( userid, pseq , quantity)"+"value(?,?,?)";
+			String sql ="insert into Cart(userid, pseq ,quantity)value(?,?,?)";
 			con = Db.getConnection();
 			try {
 				pstmt = con.prepareStatement(sql);
@@ -29,7 +28,6 @@ public class CartDao {
 				pstmt.setInt(2, cvo.getPseq());
 				pstmt.setInt(3, cvo.getQuantity());
 				pstmt.executeUpdate();
-				
 			} catch (SQLException e) {e.printStackTrace();
 			} finally { Db.close(con, pstmt, rs); }
 			
