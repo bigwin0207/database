@@ -22,7 +22,7 @@ public class LoginAction implements Action {
 		MemberDao mdao = MemberDao.getInstance();
 		MemberVO mvo = mdao.getMember(userid);
 		
-		String url = "loginForm.jsp";
+		String url = "login.jsp";
 		if(mvo == null)
 			request.setAttribute("message", "아이디가 없습니다");
 		else if( !mvo.getPwd().equals(pwd)) 
@@ -30,7 +30,7 @@ public class LoginAction implements Action {
 		else if(mvo.getUseyn().equals("N")) {
 			request.setAttribute("message", "해당 계정은 휴면상태이거나 탈퇴상태입니다. 관리자에게 문의하세요.");
 		}else if( mvo.getPwd().equals(pwd)) {
-			url = "?command=index";
+			url = "?command=main.jsp";
 			HttpSession session =request.getSession();
 			session.setAttribute("loginUser", mvo);
 		}else 

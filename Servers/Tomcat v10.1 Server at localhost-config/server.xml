@@ -109,12 +109,14 @@
 					<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" maxActive="500" name="jdbc/MysqlDB" password="adminuser" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/shop" username="root"/>
 					
 					</Context>
-				<Context docBase="Test1" path="/Test1" reloadable="true" source="org.eclipse.jst.jee.server:Test1"/>
-                   
-
-	   
-	         <!-- <Context docBase="Test2" path="/Test2" reloadable="true" source="org.eclipse.jst.jee.server:Test2"/>
-	         <Context docBase="Test1" path="/Test1" reloadable="true" source="org.eclipse.jst.jee.server:Test1"/> --></Host>
+			
+				<Context docBase="Test1" path="/Test1" reloadable="true" source="org.eclipse.jst.jee.server:Test1">
+				
+					<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.jdbc.pool.DataSourceFactory" maxActive="500" name="jdbc/MysqlDB" password="adminuser" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/shop" username="root"/>
+				
+				</Context>
+				
+				</Host>
 		</Engine>
 	</Service>
 </Server>
